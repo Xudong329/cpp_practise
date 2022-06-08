@@ -8,14 +8,16 @@ int* selection_sort(int a[], int b) {
 
 
     for (int i = 0; i < b;i++) {
-        int index=i,j,temp=0;
+        //index is for saving index of smallest number in array.
+        int index=i,temp=0;
 
-        for (j = i+1; j < b; j++) {
+        for (int j = i+1; j < b; j++) {
             if (a[j]<a[index]) {
                 index = j;
             }
         }
-        
+
+        //swap process
         temp = a[i];
         a[i] = a[index];
         a[index] = temp;
@@ -27,13 +29,14 @@ int* selection_sort(int a[], int b) {
 
 int main()
 {
-    int name[10] = {9,8,7,6,5,4,3,2,1,0};
+    int examples[10] = {9,8,7,6,5,4,3,2,1,0};
 
-    selection_sort(name,10);
+    selection_sort(examples,10);
 
     for (int i = 0;i<10; i++) {
-        cout << name[i]<<'\n';
+        cout << examples[i]<<'\n';
     }
 
     return 0;
 }
+
